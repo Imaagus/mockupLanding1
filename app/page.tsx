@@ -495,7 +495,13 @@ function SobreNosotrosSection() {
   )
 }
 
-function TestimonialsSection({ activeTestimonial, setActiveTestimonial }) {
+function TestimonialsSection({
+  activeTestimonial,
+  setActiveTestimonial,
+}: {
+  activeTestimonial: number
+  setActiveTestimonial: (index: number) => void
+}) {
   const testimonials = [
     {
       text: "Tu testimonio va aquí. Incluye comentarios reales de clientes satisfechos.",
@@ -549,7 +555,7 @@ function TestimonialsSection({ activeTestimonial, setActiveTestimonial }) {
                 <div className="w-16 h-16 rounded-full bg-primary/10 mb-6 flex items-center justify-center">
                   <span className="text-primary font-bold">{testimonials[activeTestimonial].author.charAt(0)}</span>
                 </div>
-                <p className="text-xl md:text-2xl italic mb-8">"{testimonials[activeTestimonial].text}"</p>
+                <p className="text-xl md:text-2xl italic mb-8">&quot;{testimonials[activeTestimonial].text}&quot;</p>
                 <h4 className="font-bold text-lg">{testimonials[activeTestimonial].author}</h4>
                 <p className="text-sm text-muted-foreground">{testimonials[activeTestimonial].position}</p>
               </div>
@@ -1000,9 +1006,15 @@ function Footer() {
             © {new Date().getFullYear()} Tu Empresa. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Desarrollado por GretSoft
-            </Link>
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Política de Privacidad
+            </a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Términos de Servicio
+            </a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Cookies
+            </a>
           </div>
         </div>
       </div>
